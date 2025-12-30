@@ -7,7 +7,7 @@ return array(
 		'name' => 'create-block/sp-team-members',
 		'version' => '0.1.0',
 		'title' => 'Sp Team Members',
-		'category' => 'widgets',
+		'category' => 'text',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(
@@ -15,6 +15,12 @@ return array(
 		),
 		'supports' => array(
 			'html' => false
+		),
+		'attributes' => array(
+			'columns' => array(
+				'type' => 'number',
+				'default' => 2
+			)
 		),
 		'textdomain' => 'sp-team-members',
 		'editorScript' => 'file:./index.js',

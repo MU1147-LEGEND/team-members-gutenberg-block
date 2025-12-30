@@ -1,41 +1,39 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import {
+	InnerBlocks,
+	InspectorControls,
+	useBlockProps,
+} from "@wordpress/block-editor";
+import { PanelBody, RangeControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
+import "./editor.scss";
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+export default function Edit({ attributes, setAttributes }) {
+	const { columns } = attributes;
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+	const onChangeColumns = (newColumns) => {
+		setAttributes({ columns: newColumns });
+	};
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Sp Team Members – hello from the editor!',
-				'sp-team-members'
-			) }
-		</p>
+		<div
+			{...useBlockProps({
+				className: `has-${columns}-columns`,
+			})} 
+		>
+			<InspectorControls>
+				<PanelBody title={__("Layout Settings", "sp-team-members")}>
+					<RangeControl
+						label={__("Columns", "sp-team-members")}
+						min={1}
+						max={6}
+						value={columns}
+						onChange={onChangeColumns}
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<InnerBlocks
+				allowedBlocks={["create-block/sp-team-member", "core/spacer"]}
+			/>
+		</div>
 	);
 }
