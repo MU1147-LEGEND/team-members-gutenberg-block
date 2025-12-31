@@ -15,6 +15,30 @@
 		margin: 10px;
 		text-align: center;
 
+		.wp-block-create-block-sp-team-member-social-links {
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 2px -5px 0;
+			}
+			li {
+				display: inline-block;
+				margin: 5px;
+				&:hover {
+					span.dashicon {
+						transition: all 0.4s ease;
+						color: #69b469;
+					}
+				}
+				a {
+					text-decoration: none;
+				}
+				span.dashicon {
+					color: #565656;
+				}
+			}
+		}
+
 		h4 {
 			color: #222;
 			font-size: 22px;

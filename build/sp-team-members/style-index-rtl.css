@@ -29,6 +29,25 @@
   margin: 10px;
   text-align: center;
 }
+.wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member .wp-block-create-block-sp-team-member-social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 2px -5px 0;
+}
+.wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member .wp-block-create-block-sp-team-member-social-links li {
+  display: inline-block;
+  margin: 5px;
+}
+.wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member .wp-block-create-block-sp-team-member-social-links li:hover span.dashicon {
+  transition: all 0.4s ease;
+  color: #69b469;
+}
+.wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member .wp-block-create-block-sp-team-member-social-links li a {
+  text-decoration: none;
+}
+.wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member .wp-block-create-block-sp-team-member-social-links li span.dashicon {
+  color: #565656;
+}
 .wp-block-create-block-sp-team-members .wp-block-create-block-sp-team-member h4 {
   color: #222;
   font-size: 22px;

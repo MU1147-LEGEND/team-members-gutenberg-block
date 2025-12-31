@@ -18,7 +18,7 @@ export default function Edit({ attributes, setAttributes }) {
 		<div
 			{...useBlockProps({
 				className: `has-${columns}-columns`,
-			})} 
+			})}
 		>
 			<InspectorControls>
 				<PanelBody title={__("Layout Settings", "sp-team-members")}>
@@ -33,6 +33,7 @@ export default function Edit({ attributes, setAttributes }) {
 			</InspectorControls>
 			<InnerBlocks
 				allowedBlocks={["create-block/sp-team-member", "core/spacer"]}
+				orientation="horizontal"
 			/>
 		</div>
 	);

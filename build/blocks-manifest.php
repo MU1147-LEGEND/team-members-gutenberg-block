@@ -14,7 +14,12 @@ return array(
 			
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'align' => array(
+				'wide',
+				'center',
+				'full'
+			)
 		),
 		'attributes' => array(
 			'columns' => array(
