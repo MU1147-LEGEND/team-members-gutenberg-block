@@ -6,8 +6,10 @@ import {
 } from "@dnd-kit/core";
 import {
 	SortableContext,
-	verticalListSortingStrategy,
+	arrayMove,
+	horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import { restrictToHorizontalAxis } from "@dnd-kit/modifiers";
 import { isBlobURL } from "@wordpress/blob";
 import {
 	BlockControls,
@@ -49,7 +51,9 @@ function Edit({
 	const prevUrl = usePrevious(url);
 	const prevSelected = usePrevious(isSelected);
 	const [selectedLink, setSelectedLink] = useState();
-	const sensors = useSensors(useSensor(PointerSensor));
+	const sensors = useSensors(
+		useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+	);
 
 	const imageObject = useSelect(
 		(select) => (id ? select("core").getMedia(id) : null),
@@ -148,6 +152,19 @@ function Edit({
 
 	const handleDragEnd = (event) => {
 		const { active, over } = event;
+		if (active.id !== over.id) {
+			const oldIndex = socialLinks.findIndex(
+				(i) => active.id === `${i.icon}-${i.link}`,
+			);
+			const newIndex = socialLinks.findIndex(
+				(i) => over.id === `${i.icon}-${i.link}`,
+			);
+
+			setAttributes({
+				socialLinks: arrayMove(socialLinks, oldIndex, newIndex),
+			});
+			setSelectedLink(newIndex);
+		}
 	};
 
 	useEffect(() => {
@@ -255,39 +272,30 @@ function Edit({
 
 				<div className={`wp-block-create-block-sp-team-member-social-links`}>
 					<ul>
-						<DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+						<DndContext
+							sensors={sensors}
+							onDragEnd={handleDragEnd}
+							modifiers={[restrictToHorizontalAxis]}
+						>
 							<SortableContext
 								items={socialLinks.map(
 									(socialLink) => `${socialLink.icon}-${socialLink.link}`,
 								)}
-								strategy={verticalListSortingStrategy}
+								strategy={horizontalListSortingStrategy}
 							>
 								{socialLinks.map((socialLink, index) => (
 									<SortableItem
 										key={`${socialLink.icon}-${socialLink?.link}`}
 										id={`${socialLink.icon}-${socialLink?.link}`}
-										socialLink={socialLink}
 										index={index}
 										selectedLink={selectedLink}
 										setSelectedLink={setSelectedLink}
+										socialLink={socialLink}
 									/>
 								))}
 							</SortableContext>
 						</DndContext>
 
-						{socialLinks.map((socialLink, index) => (
-							<li
-								key={index}
-								className={selectedLink === index ? "is-selected" : null}
-							>
-								<button
-									aria-label={__("Edit Social Link", "sp-team-member")}
-									onClick={() => setSelectedLink(index)}
-								>
-									<Icon icon={socialLink.icon} />
-								</button>
-							</li>
-						))}
 						{/* loop end */}
 						{isSelected && (
 							<li className="wp-block-create-block-sp-team-member-add-icon-li">

@@ -6,8 +6,46 @@
 	"title": "Sp Team Members",
 	"category": "text",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
-	"example": {},
+	"description": "A block to showcase team members with their details and photos.",
+	"example": {
+		"attributes": {
+			"columns": 2
+		},
+		"innerBlocks": [
+			{
+				"name": "create-block/sp-team-member",
+				"attributes": {
+					"name": "Mohammad",
+					"bio": "Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).",
+					"url": "https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+					"socialLinks": [
+						{
+							"icon": "facebook"
+						},
+						{
+							"icon": "instagram"
+						}
+					]
+				}
+			},
+			{
+				"name": "create-block/sp-team-member",
+				"attributes": {
+					"name": "Mohammad",
+					"bio": "Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).",
+					"url": "https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+					"socialLinks": [
+						{
+							"icon": "facebook"
+						},
+						{
+							"icon": "instagram"
+						}
+					]
+				}
+			}
+		]
+	},
 	"supports": {
 		"html": false,
 		"align": ["wide", "center", "full"]

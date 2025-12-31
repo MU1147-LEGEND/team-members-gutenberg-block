@@ -74,6 +74,9 @@
 						margin: 5px;
 						span.dashicon {
 							color: #565656;
+							&:active {
+								color: green;
+							}
 						}
 
 						&.is-selected {

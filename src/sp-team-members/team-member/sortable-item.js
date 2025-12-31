@@ -1,5 +1,7 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { __ } from "@wordpress/i18n";
+import { Icon } from "@wordpress/components";
 
 const SortableItem = (props) => {
 	const { attributes, listeners, setNodeRef, transform, transition } =

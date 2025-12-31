@@ -9,9 +9,45 @@ return array(
 		'title' => 'Sp Team Members',
 		'category' => 'text',
 		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
+		'description' => 'A block to showcase team members with their details and photos.',
 		'example' => array(
-			
+			'attributes' => array(
+				'columns' => 2
+			),
+			'innerBlocks' => array(
+				array(
+					'name' => 'create-block/sp-team-member',
+					'attributes' => array(
+						'name' => 'Mohammad',
+						'bio' => 'Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).',
+						'url' => 'https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
+						'socialLinks' => array(
+							array(
+								'icon' => 'facebook'
+							),
+							array(
+								'icon' => 'instagram'
+							)
+						)
+					)
+				),
+				array(
+					'name' => 'create-block/sp-team-member',
+					'attributes' => array(
+						'name' => 'Mohammad',
+						'bio' => 'Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).',
+						'url' => 'https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3',
+						'socialLinks' => array(
+							array(
+								'icon' => 'facebook'
+							),
+							array(
+								'icon' => 'instagram'
+							)
+						)
+					)
+				)
+			)
 		),
 		'supports' => array(
 			'html' => false,

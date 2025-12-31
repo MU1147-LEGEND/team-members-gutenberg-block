@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js"
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+accessibility@3.1.1_react@18.3.1/node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js"
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+accessibility@3.1.1_react@18.3.1/node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js ***!
+  \************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -81,10 +81,10 @@ function useAnnouncement() {
 
 /***/ },
 
-/***/ "./node_modules/@dnd-kit/core/dist/core.esm.js"
-/*!*****************************************************!*\
-  !*** ./node_modules/@dnd-kit/core/dist/core.esm.js ***!
-  \*****************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js"
+/*!*************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js ***!
+  \*************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -125,8 +125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
-/* harmony import */ var _dnd_kit_accessibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dnd-kit/accessibility */ "./node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js");
+/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
+/* harmony import */ var _dnd_kit_accessibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @dnd-kit/accessibility */ "./node_modules/.pnpm/@dnd-kit+accessibility@3.1.1_react@18.3.1/node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js");
 
 
 
@@ -4100,10 +4100,152 @@ const DragOverlay = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().me
 
 /***/ },
 
-/***/ "./node_modules/@dnd-kit/sortable/dist/sortable.esm.js"
-/*!*************************************************************!*\
-  !*** ./node_modules/@dnd-kit/sortable/dist/sortable.esm.js ***!
-  \*************************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js"
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js ***!
+  \***********************************************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createSnapModifier: () => (/* binding */ createSnapModifier),
+/* harmony export */   restrictToFirstScrollableAncestor: () => (/* binding */ restrictToFirstScrollableAncestor),
+/* harmony export */   restrictToHorizontalAxis: () => (/* binding */ restrictToHorizontalAxis),
+/* harmony export */   restrictToParentElement: () => (/* binding */ restrictToParentElement),
+/* harmony export */   restrictToVerticalAxis: () => (/* binding */ restrictToVerticalAxis),
+/* harmony export */   restrictToWindowEdges: () => (/* binding */ restrictToWindowEdges),
+/* harmony export */   snapCenterToCursor: () => (/* binding */ snapCenterToCursor)
+/* harmony export */ });
+/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
+
+
+function createSnapModifier(gridSize) {
+  return _ref => {
+    let {
+      transform
+    } = _ref;
+    return { ...transform,
+      x: Math.ceil(transform.x / gridSize) * gridSize,
+      y: Math.ceil(transform.y / gridSize) * gridSize
+    };
+  };
+}
+
+const restrictToHorizontalAxis = _ref => {
+  let {
+    transform
+  } = _ref;
+  return { ...transform,
+    y: 0
+  };
+};
+
+function restrictToBoundingRect(transform, rect, boundingRect) {
+  const value = { ...transform
+  };
+
+  if (rect.top + transform.y <= boundingRect.top) {
+    value.y = boundingRect.top - rect.top;
+  } else if (rect.bottom + transform.y >= boundingRect.top + boundingRect.height) {
+    value.y = boundingRect.top + boundingRect.height - rect.bottom;
+  }
+
+  if (rect.left + transform.x <= boundingRect.left) {
+    value.x = boundingRect.left - rect.left;
+  } else if (rect.right + transform.x >= boundingRect.left + boundingRect.width) {
+    value.x = boundingRect.left + boundingRect.width - rect.right;
+  }
+
+  return value;
+}
+
+const restrictToParentElement = _ref => {
+  let {
+    containerNodeRect,
+    draggingNodeRect,
+    transform
+  } = _ref;
+
+  if (!draggingNodeRect || !containerNodeRect) {
+    return transform;
+  }
+
+  return restrictToBoundingRect(transform, draggingNodeRect, containerNodeRect);
+};
+
+const restrictToFirstScrollableAncestor = _ref => {
+  let {
+    draggingNodeRect,
+    transform,
+    scrollableAncestorRects
+  } = _ref;
+  const firstScrollableAncestorRect = scrollableAncestorRects[0];
+
+  if (!draggingNodeRect || !firstScrollableAncestorRect) {
+    return transform;
+  }
+
+  return restrictToBoundingRect(transform, draggingNodeRect, firstScrollableAncestorRect);
+};
+
+const restrictToVerticalAxis = _ref => {
+  let {
+    transform
+  } = _ref;
+  return { ...transform,
+    x: 0
+  };
+};
+
+const restrictToWindowEdges = _ref => {
+  let {
+    transform,
+    draggingNodeRect,
+    windowRect
+  } = _ref;
+
+  if (!draggingNodeRect || !windowRect) {
+    return transform;
+  }
+
+  return restrictToBoundingRect(transform, draggingNodeRect, windowRect);
+};
+
+const snapCenterToCursor = _ref => {
+  let {
+    activatorEvent,
+    draggingNodeRect,
+    transform
+  } = _ref;
+
+  if (draggingNodeRect && activatorEvent) {
+    const activatorCoordinates = (0,_dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_0__.getEventCoordinates)(activatorEvent);
+
+    if (!activatorCoordinates) {
+      return transform;
+    }
+
+    const offsetX = activatorCoordinates.x - draggingNodeRect.left;
+    const offsetY = activatorCoordinates.y - draggingNodeRect.top;
+    return { ...transform,
+      x: transform.x + offsetX - draggingNodeRect.width / 2,
+      y: transform.y + offsetY - draggingNodeRect.height / 2
+    };
+  }
+
+  return transform;
+};
+
+
+//# sourceMappingURL=modifiers.esm.js.map
+
+
+/***/ },
+
+/***/ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js"
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js ***!
+  \*********************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4123,8 +4265,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/@dnd-kit/core/dist/core.esm.js");
-/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
+/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js");
+/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
 
 
 
@@ -4912,6 +5054,379 @@ function isAfter(a, b) {
 
 /***/ },
 
+/***/ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js"
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js ***!
+  \************************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CSS: () => (/* binding */ CSS),
+/* harmony export */   add: () => (/* binding */ add),
+/* harmony export */   canUseDOM: () => (/* binding */ canUseDOM),
+/* harmony export */   findFirstFocusableNode: () => (/* binding */ findFirstFocusableNode),
+/* harmony export */   getEventCoordinates: () => (/* binding */ getEventCoordinates),
+/* harmony export */   getOwnerDocument: () => (/* binding */ getOwnerDocument),
+/* harmony export */   getWindow: () => (/* binding */ getWindow),
+/* harmony export */   hasViewportRelativeCoordinates: () => (/* binding */ hasViewportRelativeCoordinates),
+/* harmony export */   isDocument: () => (/* binding */ isDocument),
+/* harmony export */   isHTMLElement: () => (/* binding */ isHTMLElement),
+/* harmony export */   isKeyboardEvent: () => (/* binding */ isKeyboardEvent),
+/* harmony export */   isNode: () => (/* binding */ isNode),
+/* harmony export */   isSVGElement: () => (/* binding */ isSVGElement),
+/* harmony export */   isTouchEvent: () => (/* binding */ isTouchEvent),
+/* harmony export */   isWindow: () => (/* binding */ isWindow),
+/* harmony export */   subtract: () => (/* binding */ subtract),
+/* harmony export */   useCombinedRefs: () => (/* binding */ useCombinedRefs),
+/* harmony export */   useEvent: () => (/* binding */ useEvent),
+/* harmony export */   useInterval: () => (/* binding */ useInterval),
+/* harmony export */   useIsomorphicLayoutEffect: () => (/* binding */ useIsomorphicLayoutEffect),
+/* harmony export */   useLatestValue: () => (/* binding */ useLatestValue),
+/* harmony export */   useLazyMemo: () => (/* binding */ useLazyMemo),
+/* harmony export */   useNodeRef: () => (/* binding */ useNodeRef),
+/* harmony export */   usePrevious: () => (/* binding */ usePrevious),
+/* harmony export */   useUniqueId: () => (/* binding */ useUniqueId)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function useCombinedRefs() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => node => {
+    refs.forEach(ref => ref(node));
+  }, // eslint-disable-next-line react-hooks/exhaustive-deps
+  refs);
+}
+
+// https://github.com/facebook/react/blob/master/packages/shared/ExecutionEnvironment.js
+const canUseDOM = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined';
+
+function isWindow(element) {
+  const elementString = Object.prototype.toString.call(element);
+  return elementString === '[object Window]' || // In Electron context the Window object serializes to [object global]
+  elementString === '[object global]';
+}
+
+function isNode(node) {
+  return 'nodeType' in node;
+}
+
+function getWindow(target) {
+  var _target$ownerDocument, _target$ownerDocument2;
+
+  if (!target) {
+    return window;
+  }
+
+  if (isWindow(target)) {
+    return target;
+  }
+
+  if (!isNode(target)) {
+    return window;
+  }
+
+  return (_target$ownerDocument = (_target$ownerDocument2 = target.ownerDocument) == null ? void 0 : _target$ownerDocument2.defaultView) != null ? _target$ownerDocument : window;
+}
+
+function isDocument(node) {
+  const {
+    Document
+  } = getWindow(node);
+  return node instanceof Document;
+}
+
+function isHTMLElement(node) {
+  if (isWindow(node)) {
+    return false;
+  }
+
+  return node instanceof getWindow(node).HTMLElement;
+}
+
+function isSVGElement(node) {
+  return node instanceof getWindow(node).SVGElement;
+}
+
+function getOwnerDocument(target) {
+  if (!target) {
+    return document;
+  }
+
+  if (isWindow(target)) {
+    return target.document;
+  }
+
+  if (!isNode(target)) {
+    return document;
+  }
+
+  if (isDocument(target)) {
+    return target;
+  }
+
+  if (isHTMLElement(target) || isSVGElement(target)) {
+    return target.ownerDocument;
+  }
+
+  return document;
+}
+
+/**
+ * A hook that resolves to useEffect on the server and useLayoutEffect on the client
+ * @param callback {function} Callback function that is invoked when the dependencies of the hook change
+ */
+
+const useIsomorphicLayoutEffect = canUseDOM ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+function useEvent(handler) {
+  const handlerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(handler);
+  useIsomorphicLayoutEffect(() => {
+    handlerRef.current = handler;
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return handlerRef.current == null ? void 0 : handlerRef.current(...args);
+  }, []);
+}
+
+function useInterval() {
+  const intervalRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const set = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((listener, duration) => {
+    intervalRef.current = setInterval(listener, duration);
+  }, []);
+  const clear = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
+    if (intervalRef.current !== null) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+  return [set, clear];
+}
+
+function useLatestValue(value, dependencies) {
+  if (dependencies === void 0) {
+    dependencies = [value];
+  }
+
+  const valueRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(value);
+  useIsomorphicLayoutEffect(() => {
+    if (valueRef.current !== value) {
+      valueRef.current = value;
+    }
+  }, dependencies);
+  return valueRef;
+}
+
+function useLazyMemo(callback, dependencies) {
+  const valueRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    const newValue = callback(valueRef.current);
+    valueRef.current = newValue;
+    return newValue;
+  }, // eslint-disable-next-line react-hooks/exhaustive-deps
+  [...dependencies]);
+}
+
+function useNodeRef(onChange) {
+  const onChangeHandler = useEvent(onChange);
+  const node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const setNodeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(element => {
+    if (element !== node.current) {
+      onChangeHandler == null ? void 0 : onChangeHandler(element, node.current);
+    }
+
+    node.current = element;
+  }, //eslint-disable-next-line
+  []);
+  return [node, setNodeRef];
+}
+
+function usePrevious(value) {
+  const ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+}
+
+let ids = {};
+function useUniqueId(prefix, value) {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
+    if (value) {
+      return value;
+    }
+
+    const id = ids[prefix] == null ? 0 : ids[prefix] + 1;
+    ids[prefix] = id;
+    return prefix + "-" + id;
+  }, [prefix, value]);
+}
+
+function createAdjustmentFn(modifier) {
+  return function (object) {
+    for (var _len = arguments.length, adjustments = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      adjustments[_key - 1] = arguments[_key];
+    }
+
+    return adjustments.reduce((accumulator, adjustment) => {
+      const entries = Object.entries(adjustment);
+
+      for (const [key, valueAdjustment] of entries) {
+        const value = accumulator[key];
+
+        if (value != null) {
+          accumulator[key] = value + modifier * valueAdjustment;
+        }
+      }
+
+      return accumulator;
+    }, { ...object
+    });
+  };
+}
+
+const add = /*#__PURE__*/createAdjustmentFn(1);
+const subtract = /*#__PURE__*/createAdjustmentFn(-1);
+
+function hasViewportRelativeCoordinates(event) {
+  return 'clientX' in event && 'clientY' in event;
+}
+
+function isKeyboardEvent(event) {
+  if (!event) {
+    return false;
+  }
+
+  const {
+    KeyboardEvent
+  } = getWindow(event.target);
+  return KeyboardEvent && event instanceof KeyboardEvent;
+}
+
+function isTouchEvent(event) {
+  if (!event) {
+    return false;
+  }
+
+  const {
+    TouchEvent
+  } = getWindow(event.target);
+  return TouchEvent && event instanceof TouchEvent;
+}
+
+/**
+ * Returns the normalized x and y coordinates for mouse and touch events.
+ */
+
+function getEventCoordinates(event) {
+  if (isTouchEvent(event)) {
+    if (event.touches && event.touches.length) {
+      const {
+        clientX: x,
+        clientY: y
+      } = event.touches[0];
+      return {
+        x,
+        y
+      };
+    } else if (event.changedTouches && event.changedTouches.length) {
+      const {
+        clientX: x,
+        clientY: y
+      } = event.changedTouches[0];
+      return {
+        x,
+        y
+      };
+    }
+  }
+
+  if (hasViewportRelativeCoordinates(event)) {
+    return {
+      x: event.clientX,
+      y: event.clientY
+    };
+  }
+
+  return null;
+}
+
+const CSS = /*#__PURE__*/Object.freeze({
+  Translate: {
+    toString(transform) {
+      if (!transform) {
+        return;
+      }
+
+      const {
+        x,
+        y
+      } = transform;
+      return "translate3d(" + (x ? Math.round(x) : 0) + "px, " + (y ? Math.round(y) : 0) + "px, 0)";
+    }
+
+  },
+  Scale: {
+    toString(transform) {
+      if (!transform) {
+        return;
+      }
+
+      const {
+        scaleX,
+        scaleY
+      } = transform;
+      return "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
+    }
+
+  },
+  Transform: {
+    toString(transform) {
+      if (!transform) {
+        return;
+      }
+
+      return [CSS.Translate.toString(transform), CSS.Scale.toString(transform)].join(' ');
+    }
+
+  },
+  Transition: {
+    toString(_ref) {
+      let {
+        property,
+        duration,
+        easing
+      } = _ref;
+      return property + " " + duration + "ms " + easing;
+    }
+
+  }
+});
+
+const SELECTOR = 'a,frame,iframe,input:not([type=hidden]):not(:disabled),select:not(:disabled),textarea:not(:disabled),button:not(:disabled),*[tabindex]';
+function findFirstFocusableNode(element) {
+  if (element.matches(SELECTOR)) {
+    return element;
+  }
+
+  return element.querySelector(SELECTOR);
+}
+
+
+//# sourceMappingURL=utilities.esm.js.map
+
+
+/***/ },
+
 /***/ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js"
 /*!***************************************************************!*\
   !*** ./node_modules/@dnd-kit/utilities/dist/utilities.esm.js ***!
@@ -5291,7 +5806,7 @@ function findFirstFocusableNode(element) {
   \****************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sp-team-members","version":"0.1.0","title":"Sp Team Members","category":"text","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false,"align":["wide","center","full"]},"attributes":{"columns":{"type":"number","default":2}},"textdomain":"sp-team-members","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/sp-team-members","version":"0.1.0","title":"Sp Team Members","category":"text","icon":"smiley","description":"A block to showcase team members with their details and photos.","example":{"attributes":{"columns":2},"innerBlocks":[{"name":"create-block/sp-team-member","attributes":{"name":"Mohammad","bio":"Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).","url":"https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3","socialLinks":[{"icon":"facebook"},{"icon":"instagram"}]}},{"name":"create-block/sp-team-member","attributes":{"name":"Mohammad","bio":"Mos jeta Mac-er jonno shetar moto Windows e system-wide smooth/kinetic scrolling support er ekta perfect free version nai (dukkhojanok reality).","url":"https://tse2.mm.bing.net/th/id/OIP.j7sZ8mcnlXSXVD_mNzlFvQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3","socialLinks":[{"icon":"facebook"},{"icon":"instagram"}]}}]},"supports":{"html":false,"align":["wide","center","full"]},"attributes":{"columns":{"type":"number","default":2}},"textdomain":"sp-team-members","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ },
 
@@ -5487,26 +6002,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/@dnd-kit/core/dist/core.esm.js");
-/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
-/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blob */ "@wordpress/blob");
-/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blob__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _delete_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../delete.svg */ "./src/sp-team-members/delete.svg");
-/* harmony import */ var _sortable_item__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sortable-item */ "./src/sp-team-members/team-member/sortable-item.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js");
+/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
+/* harmony import */ var _dnd_kit_modifiers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/modifiers */ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js");
+/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blob */ "@wordpress/blob");
+/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _delete_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../delete.svg */ "./src/sp-team-members/delete.svg");
+/* harmony import */ var _sortable_item__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sortable-item */ "./src/sp-team-members/team-member/sortable-item.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 
@@ -5534,14 +6051,18 @@ function Edit({
     alt,
     socialLinks
   } = attributes;
-  const titleRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_7__.useRef)();
-  const prevUrl = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.usePrevious)(url);
-  const prevSelected = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.usePrevious)(isSelected);
-  const [selectedLink, setSelectedLink] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_7__.useState)();
-  const sensors = (0,_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.useSensors)((0,_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.useSensor)(_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.PointerSensor));
-  const imageObject = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_6__.useSelect)(select => id ? select("core").getMedia(id) : null, [id]);
-  const imageSizes = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_6__.useSelect)(select => {
-    return select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.store).getSettings().imageSizes;
+  const titleRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useRef)();
+  const prevUrl = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__.usePrevious)(url);
+  const prevSelected = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__.usePrevious)(isSelected);
+  const [selectedLink, setSelectedLink] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useState)();
+  const sensors = (0,_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.useSensors)((0,_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.useSensor)(_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.PointerSensor, {
+    activationConstraint: {
+      distance: 5
+    }
+  }));
+  const imageObject = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_7__.useSelect)(select => id ? select("core").getMedia(id) : null, [id]);
+  const imageSizes = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_7__.useSelect)(select => {
+    return select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.store).getSettings().imageSizes;
   }, []);
   const getImageSizeOptions = () => {
     if (!imageObject) return [];
@@ -5648,9 +6169,17 @@ function Edit({
       active,
       over
     } = event;
+    if (active.id !== over.id) {
+      const oldIndex = socialLinks.findIndex(i => active.id === `${i.icon}-${i.link}`);
+      const newIndex = socialLinks.findIndex(i => over.id === `${i.icon}-${i.link}`);
+      setAttributes({
+        socialLinks: (0,_dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__.arrayMove)(socialLinks, oldIndex, newIndex)
+      });
+      setSelectedLink(newIndex);
+    }
   };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_7__.useEffect)(() => {
-    if (!id && (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_2__.isBlobURL)(url)) {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useEffect)(() => {
+    if (!id && (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(url)) {
       setAttributes({
         url: undefined,
         alt: ""
@@ -5659,7 +6188,7 @@ function Edit({
   }, []);
 
   // focusing and select whole text the title input when the block is selected
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_7__.useEffect)(() => {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useEffect)(() => {
     if (url && !prevUrl) {
       titleRef.current.focus();
       document.execCommand("selectAll", false, null);
@@ -5667,31 +6196,31 @@ function Edit({
   }, [url, prevUrl]);
 
   // Clear selected social link when block is deselected
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_7__.useEffect)(() => {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useEffect)(() => {
     if (prevSelected && !isSelected) {
       setSelectedLink();
     }
   }, [isSelected, prevSelected]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Image Settings", "sp-team-member"),
-        children: [id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Image Size", "sp-team-member"),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Image Settings", "sp-team-member"),
+        children: [id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Image Size", "sp-team-member"),
           options: getImageSizeOptions(),
           value: url,
           onChange: onChangeImageSize
-        }), url && !(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_2__.isBlobURL)(url) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextareaControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Alt Text", "sp-team-member"),
+        }), url && !(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(url) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextareaControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Alt Text", "sp-team-member"),
           value: alt,
           onChange: onChangeAlt,
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Alt text describes your image to people who can't see it. It's also used by search engines and screen readers. If the image is purely decorative, you can leave this blank.", "sp-team-member")
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Alt text describes your image to people who can't see it. It's also used by search engines and screen readers. If the image is purely decorative, you can leave this blank.", "sp-team-member")
         })]
       })
-    }), url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, {
+    }), url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.BlockControls, {
       group: "inline",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaReplaceFlow, {
-        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Replace Image", ""),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.MediaReplaceFlow, {
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Replace Image", ""),
         onSelect: onSelectImage,
         onSelectURL: onSelectUrl,
         onError: onUploadError,
@@ -5699,20 +6228,20 @@ function Edit({
         allowedTypes: ["image"],
         mediaId: id,
         mediaURL: url
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToolbarButton, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_delete_svg__WEBPACK_IMPORTED_MODULE_9__.ReactComponent, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarButton, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_delete_svg__WEBPACK_IMPORTED_MODULE_10__.ReactComponent, {
           onClick: onDeleteImage
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(),
-      children: [url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-        className: `wp-block-create-block-sp-team-member-img${(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_2__.isBlobURL)(url) ? " is-loading" : ""}`,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)(),
+      children: [url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        className: `wp-block-create-block-sp-team-member-img${(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(url) ? " is-loading" : ""}`,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
           src: url,
           alt: alt
-        }), (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_2__.isBlobURL)(url) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Spinner, {})]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaPlaceholder, {
+        }), (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__.isBlobURL)(url) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Spinner, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.MediaPlaceholder, {
         icon: "admin-users",
         onSelect: onSelectImage,
         onSelectURL: onSelectUrl,
@@ -5721,85 +6250,77 @@ function Edit({
         allowedTypes: ["image"],
         disableMediaButtons: !!url,
         notices: noticeUI
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
         ref: titleRef,
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Name", "sp-team-member"),
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Name", "sp-team-member"),
         tagName: "h4",
         onChange: onChangeName,
         value: name,
         allowedFormats: []
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
-        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Bio", "sp-team-member"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
+        placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Bio", "sp-team-member"),
         tagName: "p",
         onChange: onChangeBio,
         value: bio,
         allowedFormats: []
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
         className: `wp-block-create-block-sp-team-member-social-links`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("ul", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.DndContext, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__.DndContext, {
             sensors: sensors,
             onDragEnd: handleDragEnd,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__.SortableContext, {
+            modifiers: [_dnd_kit_modifiers__WEBPACK_IMPORTED_MODULE_2__.restrictToHorizontalAxis],
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__.SortableContext, {
               items: socialLinks.map(socialLink => `${socialLink.icon}-${socialLink.link}`),
-              strategy: _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__.verticalListSortingStrategy,
-              children: socialLinks.map((socialLink, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_sortable_item__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              strategy: _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__.horizontalListSortingStrategy,
+              children: socialLinks.map((socialLink, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_sortable_item__WEBPACK_IMPORTED_MODULE_11__["default"], {
                 id: `${socialLink.icon}-${socialLink?.link}`,
-                socialLink: socialLink,
                 index: index,
                 selectedLink: selectedLink,
-                setSelectedLink: setSelectedLink
+                setSelectedLink: setSelectedLink,
+                socialLink: socialLink
               }, `${socialLink.icon}-${socialLink?.link}`))
             })
-          }), socialLinks.map((socialLink, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("li", {
-            className: selectedLink === index ? "is-selected" : null,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("button", {
-              "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Edit Social Link", "sp-team-member"),
-              onClick: () => setSelectedLink(index),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Icon, {
-                icon: socialLink.icon
-              })
-            })
-          }, index)), isSelected && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("li", {
+          }), isSelected && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("li", {
             className: "wp-block-create-block-sp-team-member-add-icon-li",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
-              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Add Social Link", "sp-team-member"),
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("button", {
-                "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Add Social Link", "sp-team-member"),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
+              text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Add Social Link", "sp-team-member"),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("button", {
+                "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Add Social Link", "sp-team-member"),
                 onClick: addNewSocialLink,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Icon, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Icon, {
                   icon: "plus"
                 })
               })
             })
           })]
         })
-      }), selectedLink !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+      }), selectedLink !== undefined && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
         className: "wp-block-create-block-sp-team-member-link-form",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Icon", "sp-team-member"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Icon", "sp-team-member"),
           placeholder: "Icon",
           value: socialLinks[selectedLink]?.icon,
           onChange: icon => {
             updateSocialItem("icon", icon);
           }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("URL", "sp-team-member"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("URL", "sp-team-member"),
           placeholder: "URL",
           value: socialLinks[selectedLink]?.link,
           onChange: link => {
             updateSocialItem("link", link);
           }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
           isDestructive: true,
           onClick: removeSocialItem,
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__.__)("Remove Link", "sp-team-member")
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Remove Link", "sp-team-member")
         })]
       })]
     })]
   });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.withNotices)(Edit));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.withNotices)(Edit));
 
 /***/ },
 
@@ -5966,10 +6487,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
+/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
 /* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
@@ -5987,16 +6514,16 @@ const SortableItem = props => {
     transform: _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_1__.CSS.Transform.toString(transform),
     transition
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
     ref: setNodeRef,
     style: style,
     ...attributes,
     ...listeners,
     className: props.selectedLink === props.index ? "is-selected" : null,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-      "aria-label": __("Edit Social Link", "sp-team-member"),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Edit Social Link", "sp-team-member"),
       onClick: () => props.setSelectedLink(props.index),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Icon, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
         icon: props.socialLink.icon
       })
     })
