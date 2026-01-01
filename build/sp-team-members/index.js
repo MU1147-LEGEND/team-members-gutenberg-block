@@ -81,10 +81,10 @@ function useAnnouncement() {
 
 /***/ },
 
-/***/ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js"
-/*!*************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js ***!
-  \*************************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@dnd-kit/core/dist/core.esm.js"
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@dnd-kit/core/dist/core.esm.js ***!
+  \****************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4100,10 +4100,10 @@ const DragOverlay = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().me
 
 /***/ },
 
-/***/ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js"
-/*!***********************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js ***!
-  \***********************************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js"
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js ***!
+  \*****************************************************************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4242,10 +4242,10 @@ const snapCenterToCursor = _ref => {
 
 /***/ },
 
-/***/ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js"
-/*!*********************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js ***!
-  \*********************************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/sortable/dist/sortable.esm.js"
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/sortable/dist/sortable.esm.js ***!
+  \***************************************************************************************************************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4265,7 +4265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js");
+/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@dnd-kit/core/dist/core.esm.js");
 /* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
 
 
@@ -5427,379 +5427,6 @@ function findFirstFocusableNode(element) {
 
 /***/ },
 
-/***/ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js"
-/*!***************************************************************!*\
-  !*** ./node_modules/@dnd-kit/utilities/dist/utilities.esm.js ***!
-  \***************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CSS: () => (/* binding */ CSS),
-/* harmony export */   add: () => (/* binding */ add),
-/* harmony export */   canUseDOM: () => (/* binding */ canUseDOM),
-/* harmony export */   findFirstFocusableNode: () => (/* binding */ findFirstFocusableNode),
-/* harmony export */   getEventCoordinates: () => (/* binding */ getEventCoordinates),
-/* harmony export */   getOwnerDocument: () => (/* binding */ getOwnerDocument),
-/* harmony export */   getWindow: () => (/* binding */ getWindow),
-/* harmony export */   hasViewportRelativeCoordinates: () => (/* binding */ hasViewportRelativeCoordinates),
-/* harmony export */   isDocument: () => (/* binding */ isDocument),
-/* harmony export */   isHTMLElement: () => (/* binding */ isHTMLElement),
-/* harmony export */   isKeyboardEvent: () => (/* binding */ isKeyboardEvent),
-/* harmony export */   isNode: () => (/* binding */ isNode),
-/* harmony export */   isSVGElement: () => (/* binding */ isSVGElement),
-/* harmony export */   isTouchEvent: () => (/* binding */ isTouchEvent),
-/* harmony export */   isWindow: () => (/* binding */ isWindow),
-/* harmony export */   subtract: () => (/* binding */ subtract),
-/* harmony export */   useCombinedRefs: () => (/* binding */ useCombinedRefs),
-/* harmony export */   useEvent: () => (/* binding */ useEvent),
-/* harmony export */   useInterval: () => (/* binding */ useInterval),
-/* harmony export */   useIsomorphicLayoutEffect: () => (/* binding */ useIsomorphicLayoutEffect),
-/* harmony export */   useLatestValue: () => (/* binding */ useLatestValue),
-/* harmony export */   useLazyMemo: () => (/* binding */ useLazyMemo),
-/* harmony export */   useNodeRef: () => (/* binding */ useNodeRef),
-/* harmony export */   usePrevious: () => (/* binding */ usePrevious),
-/* harmony export */   useUniqueId: () => (/* binding */ useUniqueId)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function useCombinedRefs() {
-  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
-    refs[_key] = arguments[_key];
-  }
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => node => {
-    refs.forEach(ref => ref(node));
-  }, // eslint-disable-next-line react-hooks/exhaustive-deps
-  refs);
-}
-
-// https://github.com/facebook/react/blob/master/packages/shared/ExecutionEnvironment.js
-const canUseDOM = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined';
-
-function isWindow(element) {
-  const elementString = Object.prototype.toString.call(element);
-  return elementString === '[object Window]' || // In Electron context the Window object serializes to [object global]
-  elementString === '[object global]';
-}
-
-function isNode(node) {
-  return 'nodeType' in node;
-}
-
-function getWindow(target) {
-  var _target$ownerDocument, _target$ownerDocument2;
-
-  if (!target) {
-    return window;
-  }
-
-  if (isWindow(target)) {
-    return target;
-  }
-
-  if (!isNode(target)) {
-    return window;
-  }
-
-  return (_target$ownerDocument = (_target$ownerDocument2 = target.ownerDocument) == null ? void 0 : _target$ownerDocument2.defaultView) != null ? _target$ownerDocument : window;
-}
-
-function isDocument(node) {
-  const {
-    Document
-  } = getWindow(node);
-  return node instanceof Document;
-}
-
-function isHTMLElement(node) {
-  if (isWindow(node)) {
-    return false;
-  }
-
-  return node instanceof getWindow(node).HTMLElement;
-}
-
-function isSVGElement(node) {
-  return node instanceof getWindow(node).SVGElement;
-}
-
-function getOwnerDocument(target) {
-  if (!target) {
-    return document;
-  }
-
-  if (isWindow(target)) {
-    return target.document;
-  }
-
-  if (!isNode(target)) {
-    return document;
-  }
-
-  if (isDocument(target)) {
-    return target;
-  }
-
-  if (isHTMLElement(target) || isSVGElement(target)) {
-    return target.ownerDocument;
-  }
-
-  return document;
-}
-
-/**
- * A hook that resolves to useEffect on the server and useLayoutEffect on the client
- * @param callback {function} Callback function that is invoked when the dependencies of the hook change
- */
-
-const useIsomorphicLayoutEffect = canUseDOM ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
-
-function useEvent(handler) {
-  const handlerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(handler);
-  useIsomorphicLayoutEffect(() => {
-    handlerRef.current = handler;
-  });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return handlerRef.current == null ? void 0 : handlerRef.current(...args);
-  }, []);
-}
-
-function useInterval() {
-  const intervalRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  const set = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((listener, duration) => {
-    intervalRef.current = setInterval(listener, duration);
-  }, []);
-  const clear = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(() => {
-    if (intervalRef.current !== null) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  }, []);
-  return [set, clear];
-}
-
-function useLatestValue(value, dependencies) {
-  if (dependencies === void 0) {
-    dependencies = [value];
-  }
-
-  const valueRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(value);
-  useIsomorphicLayoutEffect(() => {
-    if (valueRef.current !== value) {
-      valueRef.current = value;
-    }
-  }, dependencies);
-  return valueRef;
-}
-
-function useLazyMemo(callback, dependencies) {
-  const valueRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-    const newValue = callback(valueRef.current);
-    valueRef.current = newValue;
-    return newValue;
-  }, // eslint-disable-next-line react-hooks/exhaustive-deps
-  [...dependencies]);
-}
-
-function useNodeRef(onChange) {
-  const onChangeHandler = useEvent(onChange);
-  const node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  const setNodeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(element => {
-    if (element !== node.current) {
-      onChangeHandler == null ? void 0 : onChangeHandler(element, node.current);
-    }
-
-    node.current = element;
-  }, //eslint-disable-next-line
-  []);
-  return [node, setNodeRef];
-}
-
-function usePrevious(value) {
-  const ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    ref.current = value;
-  }, [value]);
-  return ref.current;
-}
-
-let ids = {};
-function useUniqueId(prefix, value) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-    if (value) {
-      return value;
-    }
-
-    const id = ids[prefix] == null ? 0 : ids[prefix] + 1;
-    ids[prefix] = id;
-    return prefix + "-" + id;
-  }, [prefix, value]);
-}
-
-function createAdjustmentFn(modifier) {
-  return function (object) {
-    for (var _len = arguments.length, adjustments = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      adjustments[_key - 1] = arguments[_key];
-    }
-
-    return adjustments.reduce((accumulator, adjustment) => {
-      const entries = Object.entries(adjustment);
-
-      for (const [key, valueAdjustment] of entries) {
-        const value = accumulator[key];
-
-        if (value != null) {
-          accumulator[key] = value + modifier * valueAdjustment;
-        }
-      }
-
-      return accumulator;
-    }, { ...object
-    });
-  };
-}
-
-const add = /*#__PURE__*/createAdjustmentFn(1);
-const subtract = /*#__PURE__*/createAdjustmentFn(-1);
-
-function hasViewportRelativeCoordinates(event) {
-  return 'clientX' in event && 'clientY' in event;
-}
-
-function isKeyboardEvent(event) {
-  if (!event) {
-    return false;
-  }
-
-  const {
-    KeyboardEvent
-  } = getWindow(event.target);
-  return KeyboardEvent && event instanceof KeyboardEvent;
-}
-
-function isTouchEvent(event) {
-  if (!event) {
-    return false;
-  }
-
-  const {
-    TouchEvent
-  } = getWindow(event.target);
-  return TouchEvent && event instanceof TouchEvent;
-}
-
-/**
- * Returns the normalized x and y coordinates for mouse and touch events.
- */
-
-function getEventCoordinates(event) {
-  if (isTouchEvent(event)) {
-    if (event.touches && event.touches.length) {
-      const {
-        clientX: x,
-        clientY: y
-      } = event.touches[0];
-      return {
-        x,
-        y
-      };
-    } else if (event.changedTouches && event.changedTouches.length) {
-      const {
-        clientX: x,
-        clientY: y
-      } = event.changedTouches[0];
-      return {
-        x,
-        y
-      };
-    }
-  }
-
-  if (hasViewportRelativeCoordinates(event)) {
-    return {
-      x: event.clientX,
-      y: event.clientY
-    };
-  }
-
-  return null;
-}
-
-const CSS = /*#__PURE__*/Object.freeze({
-  Translate: {
-    toString(transform) {
-      if (!transform) {
-        return;
-      }
-
-      const {
-        x,
-        y
-      } = transform;
-      return "translate3d(" + (x ? Math.round(x) : 0) + "px, " + (y ? Math.round(y) : 0) + "px, 0)";
-    }
-
-  },
-  Scale: {
-    toString(transform) {
-      if (!transform) {
-        return;
-      }
-
-      const {
-        scaleX,
-        scaleY
-      } = transform;
-      return "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
-    }
-
-  },
-  Transform: {
-    toString(transform) {
-      if (!transform) {
-        return;
-      }
-
-      return [CSS.Translate.toString(transform), CSS.Scale.toString(transform)].join(' ');
-    }
-
-  },
-  Transition: {
-    toString(_ref) {
-      let {
-        property,
-        duration,
-        easing
-      } = _ref;
-      return property + " " + duration + "ms " + easing;
-    }
-
-  }
-});
-
-const SELECTOR = 'a,frame,iframe,input:not([type=hidden]):not(:disabled),select:not(:disabled),textarea:not(:disabled),button:not(:disabled),*[tabindex]';
-function findFirstFocusableNode(element) {
-  if (element.matches(SELECTOR)) {
-    return element;
-  }
-
-  return element.querySelector(SELECTOR);
-}
-
-
-//# sourceMappingURL=utilities.esm.js.map
-
-
-/***/ },
-
 /***/ "./src/sp-team-members/block.json"
 /*!****************************************!*\
   !*** ./src/sp-team-members/block.json ***!
@@ -5943,7 +5570,34 @@ __webpack_require__.r(__webpack_exports__);
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__.name, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_teamwork_svg__WEBPACK_IMPORTED_MODULE_6__.ReactComponent, {})
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_teamwork_svg__WEBPACK_IMPORTED_MODULE_6__.ReactComponent, {}),
+  transforms: {
+    from: [{
+      type: "block",
+      blocks: ["core/image"],
+      isMultiBlock: true,
+      transform: attributes => {
+        const innerBlocks = attributes.map(({
+          url,
+          id,
+          alt
+        }) => {
+          return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("create-block/sp-team-member", {
+            url,
+            id,
+            alt,
+            name: alt,
+            socialLinks: [{
+              icon: "facebook"
+            }]
+          });
+        });
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("create-block/sp-team-members", {
+          columns: attributes.length > 2 ? 2 : attributes.length
+        }, innerBlocks);
+      }
+    }]
+  }
 });
 
 /***/ },
@@ -6002,9 +5656,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-d_dd28f9613915b34fadb5fb09ef9e129f/node_modules/@dnd-kit/core/dist/core.esm.js");
-/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
-/* harmony import */ var _dnd_kit_modifiers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/modifiers */ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@d_29804ea7af5102b7c3fb5f8ff91223c9/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js");
+/* harmony import */ var _dnd_kit_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/core */ "./node_modules/.pnpm/@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@dnd-kit/core/dist/core.esm.js");
+/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
+/* harmony import */ var _dnd_kit_modifiers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @dnd-kit/modifiers */ "./node_modules/.pnpm/@dnd-kit+modifiers@9.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/modifiers/dist/modifiers.esm.js");
 /* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blob */ "@wordpress/blob");
 /* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blob__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
@@ -6052,6 +5706,7 @@ function Edit({
     socialLinks
   } = attributes;
   const titleRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useRef)();
+  const bioRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useRef)();
   const prevUrl = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__.usePrevious)(url);
   const prevSelected = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__.usePrevious)(isSelected);
   const [selectedLink, setSelectedLink] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useState)();
@@ -6084,6 +5739,12 @@ function Edit({
     setAttributes({
       name: newName
     });
+  };
+  const handleTitleKeyDown = event => {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      bioRef.current?.focus();
+    }
   };
   const onChangeBio = newBio => {
     setAttributes({
@@ -6189,7 +5850,7 @@ function Edit({
 
   // focusing and select whole text the title input when the block is selected
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_8__.useEffect)(() => {
-    if (url && !prevUrl) {
+    if (url && !prevUrl && isSelected) {
       titleRef.current.focus();
       document.execCommand("selectAll", false, null);
     }
@@ -6256,8 +5917,10 @@ function Edit({
         tagName: "h4",
         onChange: onChangeName,
         value: name,
-        allowedFormats: []
+        allowedFormats: [],
+        onKeyDown: handleTitleKeyDown
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
+        ref: bioRef,
         placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_9__.__)("Bio", "sp-team-member"),
         tagName: "p",
         onChange: onChangeBio,
@@ -6487,8 +6150,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@d_c1e55cf3798f3fa02aae1475903908f9/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
-/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
+/* harmony import */ var _dnd_kit_sortable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @dnd-kit/sortable */ "./node_modules/.pnpm/@dnd-kit+sortable@10.0.0_@dnd-kit+core@6.3.1_react-dom@18.3.1_react@18.3.1__react@18.3.1__react@18.3.1/node_modules/@dnd-kit/sortable/dist/sortable.esm.js");
+/* harmony import */ var _dnd_kit_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dnd-kit/utilities */ "./node_modules/.pnpm/@dnd-kit+utilities@3.2.2_react@18.3.1/node_modules/@dnd-kit/utilities/dist/utilities.esm.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");

@@ -48,16 +48,17 @@ function Edit({
 }) {
 	const { name, bio, url, id, alt, socialLinks } = attributes;
 	const titleRef = useRef();
+	const bioRef = useRef();
 	const prevUrl = usePrevious(url);
 	const prevSelected = usePrevious(isSelected);
 	const [selectedLink, setSelectedLink] = useState();
 	const sensors = useSensors(
-		useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+		useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
 	);
 
 	const imageObject = useSelect(
 		(select) => (id ? select("core").getMedia(id) : null),
-		[id],
+		[id]
 	);
 
 	const imageSizes = useSelect((select) => {
@@ -86,6 +87,14 @@ function Edit({
 	const onChangeName = (newName) => {
 		setAttributes({ name: newName });
 	};
+
+	const handleTitleKeyDown = (event) => {
+		if (event.key === "Tab") {
+			event.preventDefault(); 
+			bioRef.current?.focus();
+		}
+	};
+
 
 	const onChangeBio = (newBio) => {
 		setAttributes({ bio: newBio });
@@ -154,10 +163,10 @@ function Edit({
 		const { active, over } = event;
 		if (active.id !== over.id) {
 			const oldIndex = socialLinks.findIndex(
-				(i) => active.id === `${i.icon}-${i.link}`,
+				(i) => active.id === `${i.icon}-${i.link}`
 			);
 			const newIndex = socialLinks.findIndex(
-				(i) => over.id === `${i.icon}-${i.link}`,
+				(i) => over.id === `${i.icon}-${i.link}`
 			);
 
 			setAttributes({
@@ -178,7 +187,7 @@ function Edit({
 
 	// focusing and select whole text the title input when the block is selected
 	useEffect(() => {
-		if (url && !prevUrl) {
+		if (url && !prevUrl && isSelected) {
 			titleRef.current.focus();
 			document.execCommand("selectAll", false, null);
 		}
@@ -210,7 +219,7 @@ function Edit({
 							onChange={onChangeAlt}
 							help={__(
 								"Alt text describes your image to people who can't see it. It's also used by search engines and screen readers. If the image is purely decorative, you can leave this blank.",
-								"sp-team-member",
+								"sp-team-member"
 							)}
 						/>
 					)}
@@ -261,13 +270,16 @@ function Edit({
 					onChange={onChangeName}
 					value={name}
 					allowedFormats={[]}
+					onKeyDown={handleTitleKeyDown}
 				/>
 				<RichText
+					ref={bioRef}
 					placeholder={__("Bio", "sp-team-member")}
 					tagName="p"
 					onChange={onChangeBio}
 					value={bio}
 					allowedFormats={[]}
+					
 				/>
 
 				<div className={`wp-block-create-block-sp-team-member-social-links`}>
@@ -279,7 +291,7 @@ function Edit({
 						>
 							<SortableContext
 								items={socialLinks.map(
-									(socialLink) => `${socialLink.icon}-${socialLink.link}`,
+									(socialLink) => `${socialLink.icon}-${socialLink.link}`
 								)}
 								strategy={horizontalListSortingStrategy}
 							>
